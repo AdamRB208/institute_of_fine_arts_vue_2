@@ -5,6 +5,9 @@ import { AppState } from "@/AppState.js"
 
 
 class ArtService {
+  changeHomePage(pageNumber) {
+    throw new Error('Method not implemented.')
+  }
 
   async getArt() {
     const response = await api.get('api/artworks')

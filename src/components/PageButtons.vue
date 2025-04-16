@@ -1,4 +1,24 @@
 <script setup>
+import { AppState } from '@/AppState.js';
+import { artService } from '@/services/ArtService.js';
+import { logger } from '@/utils/Logger.js';
+import { Pop } from '@/utils/Pop.js';
+import { computed } from 'vue';
+
+
+const currentPage = computed(() => AppState.currentPage)
+
+const totalPages = computed(() => AppState.totalPages)
+
+async function getNextPage(pageNumber) {
+  try {
+    await artService.changeHomePage(pageNumber)
+  }
+  catch (error) {
+    Pop.error(error, 'could not get next page');
+    logger.error('COULD NOT GET NEXT PAGE', error)
+  }
+}
 
 </script>
 
