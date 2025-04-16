@@ -12,6 +12,7 @@ onMounted(() => {
   getArt()
 })
 
+
 async function getArt() {
   try {
     await artService.getArt()
@@ -24,15 +25,40 @@ async function getArt() {
 </script>
 
 <template>
+  <section class="container d-flex justify-content-center">
+    <div class="row">
+      <div class="col-md-4 d-flex">
+        <button class="btn btn-outline-secondary">previous</button>
+        <div class="text-center align-content-center ms-3 me-3">page</div>
+        <button class="btn btn-outline-secondary">next</button>
+      </div>
+    </div>
+  </section>
   <section class="container">
     <div class="row">
       <div v-for="art in artworks" :key="art.id" class="col-md-3">
-        <!-- <img :src="artworks.imgUrls.small" alt="artworks.id" class="img-fluid">
-        <p>{{ artworks.attribution }}</p> -->
-        <ArtworksCard :artworks="art" />
+        <div class="masonry-container">
+          <!-- <img :src="artworks.imgUrls.small" alt="artworks.id" class="img-fluid">
+          <p>{{ artworks.attribution }}</p> -->
+          <ArtworksCard :artworks="art" />
+        </div>
       </div>
     </div>
   </section>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.col-md-3 {
+  background-color: rgba(128, 128, 128, 0.474);
+  margin: 2rem;
+  border-radius: 8px;
+  max-block-size: fit-content;
+}
+
+.masonry-container {
+  columns: 200px;
+  display: inline-block;
+  break-inside: avoid;
+
+}
+</style>
