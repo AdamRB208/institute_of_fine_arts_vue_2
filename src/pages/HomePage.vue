@@ -1,6 +1,7 @@
 <script setup>
 import { AppState } from '@/AppState.js';
 import ArtworksCard from '@/components/ArtworksCard.vue';
+import PageButtons from '@/components/PageButtons.vue';
 import { artService } from '@/services/ArtService.js';
 import { logger } from '@/utils/Logger.js';
 import { Pop } from '@/utils/Pop.js';
@@ -25,7 +26,7 @@ async function getArt() {
 </script>
 
 <template>
-  <section class="container d-flex justify-content-center">
+  <!-- <section class="container d-flex justify-content-center">
     <div class="row">
       <div class="col-md-4 d-flex">
         <button class="btn btn-outline-secondary">previous</button>
@@ -33,7 +34,8 @@ async function getArt() {
         <button class="btn btn-outline-secondary">next</button>
       </div>
     </div>
-  </section>
+  </section> -->
+  <PageButtons />
   <section class="container">
     <div class="row">
       <div v-for="art in artworks" :key="art.id" class="col-md-3">
@@ -45,6 +47,7 @@ async function getArt() {
       </div>
     </div>
   </section>
+  <PageButtons />
 </template>
 
 <style scoped lang="scss">
