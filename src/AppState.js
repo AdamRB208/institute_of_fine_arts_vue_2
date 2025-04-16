@@ -5,6 +5,12 @@ export const AppState = reactive({
   /**@type {import('@bcwdev/auth0provider-client').Identity} */
   identity: null,
   /** @type {import('./models/Account.js').Account} user info from the database*/
-  account: null
+  account: null,
+  /**@type {import('./models/Art.js').Art[]} user info from CodeWorks sandbox API */
+  artworks: [],
+
+  currentPage: 1,
+
+  totalPages: 35,
 })
 

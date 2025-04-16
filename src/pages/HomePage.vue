@@ -1,8 +1,11 @@
 <script setup>
+import { AppState } from '@/AppState.js';
 import { artService } from '@/services/ArtService.js';
 import { logger } from '@/utils/Logger.js';
 import { Pop } from '@/utils/Pop.js';
-import { onMounted } from 'vue';
+import { computed, onMounted } from 'vue';
+
+const artworks = computed(() => AppState.artworks)
 
 onMounted(() => {
   getArt()
@@ -21,7 +24,7 @@ async function getArt() {
 
 <template>
   <section class="containter">
-    Art Works
+    {{ artworks }}
   </section>
 </template>
 
