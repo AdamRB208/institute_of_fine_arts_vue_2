@@ -29,7 +29,7 @@ async function getNextPage(pageNumber) {
       <div class="col-md-4 d-flex mt-2 mb-2">
         <button :disabled="currentPage == 1" @click="getNextPage(currentPage - 1)"
           class="btn btn-outline-secondary">previous</button>
-        <div class="text-center align-content-center ms-3 me-3">page</div>
+        <div class="text-center ms-3 me-3">Page {{ currentPage }}</div>
         <button :disabled="currentPage == 35" @click="getNextPage(currentPage + 1)"
           class="btn btn-outline-secondary">next</button>
       </div>
