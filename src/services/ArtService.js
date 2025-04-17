@@ -23,7 +23,7 @@ class ArtService {
     AppState.currentPage = response.data.page
     AppState.totalPages = response.data.totalPages
   }
-
+  
 
 }
 
