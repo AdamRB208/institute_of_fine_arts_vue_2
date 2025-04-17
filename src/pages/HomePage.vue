@@ -23,6 +23,8 @@ async function getArt() {
     logger.error('could not get art', error)
   }
 }
+
+
 </script>
 
 <template>

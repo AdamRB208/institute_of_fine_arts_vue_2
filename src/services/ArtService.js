@@ -5,6 +5,11 @@ import { AppState } from "@/AppState.js"
 
 
 class ArtService {
+  async admireAnArtwork(artId) {
+    const response = await api.post(`api/artworks/${artId}/admire`)
+    logger.log('Admired and artwork!', response.data)
+  }
+
 
   async getArt() {
     const response = await api.get('api/artworks')
@@ -23,7 +28,7 @@ class ArtService {
     AppState.currentPage = response.data.page
     AppState.totalPages = response.data.totalPages
   }
-  
+
 
 }
 
