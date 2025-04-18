@@ -1,8 +1,6 @@
 <script setup>
-import { AppState } from '@/AppState.js';
 import { Art } from '@/models/Art.js';
 import { artService } from '@/services/ArtService.js';
-import { api } from '@/services/AxiosService.js';
 import { logger } from '@/utils/Logger.js';
 import { Pop } from '@/utils/Pop.js';
 
@@ -21,12 +19,19 @@ async function admireAnArtwork(artId) {
   }
 }
 
+function setActiveArtwork() {
+  artService.setActiveArtwork(props.artworks)
+  logger.log('setting active artwork')
+}
+
 </script>
 
 
 <template>
-  <button class="btn btn-outline-none" data-bs-toggle="modal" data-bs-target="#artworkModal" type="button"><img
-      :src="artworks.imgUrls.small" alt="artworks.id" class="img-fluid"></button>
+  <button @click="setActiveArtwork()" class="btn btn-outline-none" data-bs-toggle="modal" data-bs-target="#artworkModal"
+    type="button"><img :src="artworks.imgUrls.small" alt="artworks.id" class="img-fluid">Click to view
+    full
+    image</button>
   <div></div>
   <div class="mdi mdi-heart" type="button" @click="admireAnArtwork()">
     <small>{{ artworks.admirers.length }}</small>

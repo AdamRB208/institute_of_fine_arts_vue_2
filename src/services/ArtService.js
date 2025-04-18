@@ -5,6 +5,9 @@ import { AppState } from "@/AppState.js"
 
 
 class ArtService {
+  setActiveArtwork(artworks) {
+    AppState.activeArtwork = artworks
+  }
 
   async admireAnArtwork(artId) {
     const response = await api.post(`api/artworks/${artId}/admire`)
@@ -14,7 +17,6 @@ class ArtService {
     art.splice(artIdIndex, 1)
     AppState.artworks.push(artId)
   }
-
 
   async getArt() {
     const response = await api.get('api/artworks')
