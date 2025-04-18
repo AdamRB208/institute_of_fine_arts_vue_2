@@ -8,7 +8,8 @@ const artworks = computed(() => AppState.activeArtwork)
 
 
 <template>
-  <div class="modal fade" id="artworkModal" tabindex="-1" aria-labelledby="artworkModalLabel" aria-hidden="true">
+  <div class="artworkModal modal fade" id="artworkModal" tabindex="-1" aria-labelledby="artworkModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div v-if="artworks" class="modal-content">
         <div class="modal-header">

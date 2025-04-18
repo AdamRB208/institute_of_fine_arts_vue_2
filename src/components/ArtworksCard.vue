@@ -28,12 +28,11 @@ function setActiveArtwork() {
 
 
 <template>
-  <button @click="setActiveArtwork()" class="btn btn-outline-none" data-bs-toggle="modal" data-bs-target="#artworkModal"
-    type="button"><img :src="artworks.imgUrls.small" alt="artworks.id" class="img-fluid">Click to view
-    full
-    image</button>
+  <button @click="setActiveArtwork()" class="btn btn-outline-none" data-bs-toggle="artworkModal"
+    data-bs-target="#artworkModal" type="button"><img :src="artworks.imgUrls.small" alt="artworks.id"
+      class="img-fluid">Image details here</button>
   <div></div>
-  <div class="mdi mdi-heart" type="button" @click="admireAnArtwork()">
+  <div class="mdi mdi-heart icon" type="button" @click="admireAnArtwork()">
     <small>{{ artworks.admirers.length }}</small>
   </div>
   <p>{{ artworks.attribution }}</p>
@@ -53,5 +52,9 @@ img {
 
 small {
   font-size: 0.875em;
+}
+
+.icon {
+  display: inline;
 }
 </style>
