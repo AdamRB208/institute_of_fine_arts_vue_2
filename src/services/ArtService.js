@@ -5,9 +5,14 @@ import { AppState } from "@/AppState.js"
 
 
 class ArtService {
+
   async admireAnArtwork(artId) {
     const response = await api.post(`api/artworks/${artId}/admire`)
     logger.log('Admired and artwork!', response.data)
+    const art = AppState.artworks
+    const artIdIndex = art.findIndex(art => art.admirers.id == artId)
+    art.splice(artIdIndex, 1)
+    AppState.artworks.push(artId)
   }
 
 

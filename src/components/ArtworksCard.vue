@@ -27,8 +27,8 @@ async function admireAnArtwork(artId) {
 <template>
   <img :src="artworks.imgUrls.small" alt="artworks.id" class="img-fluid">
   <div></div>
-  <div class="mdi mdi-heart fs-5" type="button" @click="admireAnArtwork()">
-    <small class="fs-5"> admirers</small>
+  <div class="mdi mdi-heart" type="button" @click="admireAnArtwork()">
+    <small>{{ artworks.admirers.length }}</small>
   </div>
   <p>{{ artworks.attribution }}</p>
 </template>
@@ -43,5 +43,9 @@ p {
 
 img {
   margin-top: 1rem;
+}
+
+small {
+  font-size: 0.875em;
 }
 </style>
