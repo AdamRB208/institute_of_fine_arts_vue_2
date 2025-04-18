@@ -25,7 +25,8 @@ async function admireAnArtwork(artId) {
 
 
 <template>
-  <img :src="artworks.imgUrls.small" alt="artworks.id" class="img-fluid">
+  <button class="btn btn-outline-none" data-bs-toggle="modal" data-bs-target="#artworkModal" type="button"><img
+      :src="artworks.imgUrls.small" alt="artworks.id" class="img-fluid"></button>
   <div></div>
   <div class="mdi mdi-heart" type="button" @click="admireAnArtwork()">
     <small>{{ artworks.admirers.length }}</small>

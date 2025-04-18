@@ -11,7 +11,6 @@ const artworks = computed(() => AppState.artworks)
 
 onMounted(() => {
   getArt()
-
 })
 
 
@@ -41,7 +40,7 @@ async function getArt() {
   <PageButtons />
   <section class="container">
     <div class="row">
-      <div v-for="art in artworks" :key="art?.id" class="col-md-3">
+      <div v-for="art in artworks" :key="art.id" class="col-md-3">
         <div class="masonry-container">
           <!-- <img :src="artworks.imgUrls.small" alt="artworks.id" class="img-fluid">
           <p>{{ artworks.attribution }}</p> -->
